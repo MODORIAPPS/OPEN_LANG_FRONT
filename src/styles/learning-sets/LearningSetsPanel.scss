@@ -1,0 +1,18 @@
+.LearningSetsPanel{
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    #LearningSetsPanel-avatar{
+        margin: auto 0;
+    }
+
+    .LearningSetsPanel-vertical{
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

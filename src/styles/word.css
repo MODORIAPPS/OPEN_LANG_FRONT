@@ -1,0 +1,18 @@
+.word{
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+top indicator styling
+*/
+
+.indicator{
+    background-color: grey;
+    border-color: grey;
+    border-width: 2px;
+    border-radius: 32px;
+    display: block;
+}
+
+

@@ -1,0 +1,22 @@
+.preparing {
+  background-color: #4257b2;
+  width: 100%;
+  height: 100vh;
+}
+
+.preparing-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.Preparing-icon {
+  font-size: 120px;
+  display: inline-block;
+}
+.preparing-content h3 {
+  font-size: 50px;
+  margin-top: 15px;
+}

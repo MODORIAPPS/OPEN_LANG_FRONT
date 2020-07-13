@@ -1,0 +1,26 @@
+.Preparing {
+  background-color: #4257b2;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+
+  .Preparing-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+    .Preparing-icon {
+      display: inline;
+      font-size: 120px;
+    }
+
+    h3 {
+      font-size: 50px;
+      margin-top: 15px;
+    }
+  }
+}

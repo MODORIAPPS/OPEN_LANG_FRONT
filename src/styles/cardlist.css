@@ -1,0 +1,16 @@
+.top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slider {
+  max-width: 400px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.top p {
+  white-space: pre;
+}

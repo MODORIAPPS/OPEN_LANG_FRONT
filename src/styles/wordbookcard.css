@@ -1,0 +1,38 @@
+.card {
+  width: 400px;
+  height: 200px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+}
+
+.map.text {
+  margin-left: 20px;
+  padding: 0;
+}
+
+.tag-entry {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.user {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user .text {
+  margin-left: 10px;
+}
+
+/* .MuiPaper-rounded {
+  round: 50;
+} */

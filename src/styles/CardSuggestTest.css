@@ -1,0 +1,36 @@
+.CardSuggestTest{ 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#closeicon{
+    margin: 5px;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+#local-library{
+    font-size: 80px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+    flex: 4;
+}
+
+#button{
+    max-width: 150px;
+    display: inline-block;
+}

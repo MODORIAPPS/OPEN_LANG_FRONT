@@ -1,0 +1,16 @@
+.tag {
+  color: white;
+  height: 100%;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 3px 5px;
+}
+
+.tag.suggest {
+  background-color: #23b26d;
+}
+
+.tag.draft {
+  background-color: #455358;
+}

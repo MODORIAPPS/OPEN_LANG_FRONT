@@ -1,0 +1,30 @@
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-profile p {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.wrapper {
+  transition: 0.2s;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wrapper:hover {
+  color: #a1abd9;
+  transition: 0.2s;
+}
+
+.user-name{
+  margin: 0;
+  
+}

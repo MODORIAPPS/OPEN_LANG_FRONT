@@ -1,0 +1,80 @@
+.Panel {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  height: 100vh;
+
+  .Panel-item.selected {
+    background-color: #ffcd1f;
+  }
+
+  .Panel-item {
+    transition: 0.1s;
+    padding: 18px 20px;
+    cursor: pointer;
+
+    p {
+      font-weight: bold;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+    .selected {
+      background-color: #ffcd1f;
+    }
+
+    &:hover {
+      background-color: #ffcd1f;
+      transition: 0.1s;
+    }
+
+    .Panel-content {
+      color: #455358;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .Panel-subitem {
+    padding-left: 40px;
+    .Panel-sub-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &:hover {
+        transition: 0.1s;
+        color: #3ccfcf;
+      }
+
+      p {
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .text {
+    font-size: 18px;
+    transition: 0.1s;
+    padding: 1px 20px;
+  }
+
+  .highlight {
+    color: #3ccfcf;
+    font-weight: bold;
+
+    &:hover {
+      color: #ffcd1f;
+      transition: 0.1s;
+    }
+  }
+}
+
+.divider {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 0.1px;
+  background-color: #f4f4f4;
+}
