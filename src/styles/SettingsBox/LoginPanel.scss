@@ -1,5 +1,4 @@
 .LoginPanel {
-  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,13 +8,21 @@
     flex-direction: column;
   }
 
-  .LoginPanel-logo {
-    margin: 0 auto;
+  .SettingsBox-logo {
     flex: 1;
     color: #455358;
-    display: flex;
-    flex-direction: column;
-    align-self: auto;
+    display: block;
+    .icon {
+      margin: 0 auto;
+      font-size: 50px;
+      margin: 0.625rem auto 0.5rem;
+      display: block;
+    }
+
+    .Header {
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 
   .LoginPanel-content {

@@ -1,10 +1,14 @@
+@import "./Styles.scss";
+
 .Panel {
   padding-top: 20px;
   padding-bottom: 15px;
   height: 100vh;
+  width: 17rem;
+  z-index: 200;
 
   .Panel-item.selected {
-    background-color: #ffcd1f;
+    background-color: $color-orange;
   }
 
   .Panel-item {
@@ -14,21 +18,21 @@
 
     p {
       font-weight: bold;
-      margin-left: 10px;
-      font-size: 20px;
+      margin-left: $space-base;
+      font-size: $text-small;
     }
 
     .selected {
-      background-color: #ffcd1f;
+      background-color: $color-orange;
     }
 
     &:hover {
-      background-color: #ffcd1f;
+      background-color: $color-orange;
       transition: 0.1s;
     }
 
     .Panel-content {
-      color: #455358;
+      color: $color-dark;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -36,7 +40,7 @@
   }
 
   .Panel-subitem {
-    padding-left: 40px;
+    padding-left: 3em;
     .Panel-sub-content {
       display: flex;
       flex-direction: row;
@@ -44,12 +48,12 @@
 
       &:hover {
         transition: 0.1s;
-        color: #3ccfcf;
+        color: $color-highlight;
       }
 
       p {
-        font-size: 14px;
-        margin-left: 10px;
+        font-size: $text-small;
+        margin-left: $space-base;
       }
     }
   }
@@ -61,11 +65,11 @@
   }
 
   .highlight {
-    color: #3ccfcf;
+    color: $color-highlight;
     font-weight: bold;
 
     &:hover {
-      color: #ffcd1f;
+      color: $color-orange;
       transition: 0.1s;
     }
   }
@@ -76,5 +80,5 @@
   margin-bottom: 15px;
   width: 100%;
   height: 0.1px;
-  background-color: #f4f4f4;
+  background-color: $color-brightgrey;
 }

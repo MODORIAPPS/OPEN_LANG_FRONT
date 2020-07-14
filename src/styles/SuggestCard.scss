@@ -1,0 +1,40 @@
+@import "../styles/Styles.scss";
+
+.SuggestCard {
+  margin: 2rem 2.5rem 0;
+  padding: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  .SuggestCard-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    #local-library {
+      font-size: 80px;
+    }
+  }
+
+  .SuggestCard-content {
+    flex: 4;
+    display: block;
+
+    .Title {
+      color: $color-dark;
+      font-size: $text-big;
+      font-weight: $text-weight-header;
+    }
+
+    #button {
+      margin-top: 1.5rem;
+    }
+  }
+
+  #closeIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

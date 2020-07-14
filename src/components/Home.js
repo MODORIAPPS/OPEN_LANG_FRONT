@@ -1,5 +1,5 @@
 import React from "react";
-import CardSuggestTest from "./views/CardSuggestTest";
+import SuggestCard from "./views/SuggestCard";
 import { connect } from "react-redux";
 import { showSuggest, closeSuggest } from "../actions";
 import WordBookCard from "./home/WordBookCard";
@@ -18,7 +18,7 @@ class Home extends React.Component {
 
   renderSuggest = () => {
     if (this.props.home.suggest) {
-      return <CardSuggestTest />;
+      return <SuggestCard />;
     }
   };
 

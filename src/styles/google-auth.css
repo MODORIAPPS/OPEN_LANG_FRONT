@@ -11,7 +11,7 @@
   font-size: 18px;
 }
 
-.wrapper {
+.GoogleAuth-wrapper {
   transition: 0.2s;
   color: white;
   display: flex;
@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.wrapper:hover {
+.GoogleAuth-wrapper:hover {
   color: #a1abd9;
   transition: 0.2s;
 }

@@ -89,7 +89,7 @@ class GoogleAuth extends React.Component {
       return (
         <div className="user-profile">
           <Avatar alt="google-profile" src={this.props.auth.userImage} />
-          <div onClick={this.onClicked} className="wrapper">
+          <div onClick={this.onClicked} className="GoogleAuth-wrapper">
             <p className="user-name">{this.props.auth.userName}</p>
             <ArrowDropDownIcon />
           </div>

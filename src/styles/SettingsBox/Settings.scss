@@ -1,0 +1,35 @@
+@import "../Styles.scss";
+
+.Settings {
+  width: 100%;
+  height: 500px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SettingsBox {
+  margin: 1.5rem 0.75rem;
+  padding: 0.5rem 0;
+  max-width: 56.25rem;
+
+  .Header {
+    color: $color-dark;
+    font-size: $text-header;
+    font-weight: $text-weight-header;
+  }
+
+  .Heading {
+    font-size: $text-heading;
+  }
+}
+
+@media screen and (max-width: 60rem) {
+  .SettingsBox {
+    flex-direction: column;
+
+    .SettingsBox-logo {
+      margin-bottom: 0.75rem;
+    }
+  }
+}
