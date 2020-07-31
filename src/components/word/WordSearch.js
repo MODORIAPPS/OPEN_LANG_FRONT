@@ -24,9 +24,9 @@ class WordSearch extends React.Component {
   };
 
   renderWordList = () => {
-    OpenLangApi.get("/allword").then((res) => {
+    OpenLangApi.get("/word/all/5").then((res) => {
       this.setState({
-        wordData: res.data,
+        wordData: res.data.result,
       });
     });
   };

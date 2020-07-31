@@ -14,6 +14,7 @@ import LandingPage from "./LandingPage";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import LearningSets from "./learning-sets/LearningSets";
+import CreateSet from "./CreateSet";
 
 class App extends React.Component {
   // RouteIf = ({ role, component: Component, ...rest }) => {
@@ -43,6 +44,13 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/preparing">
             <Preparing />
+          </Route>
+
+          <Route exact path="/create-set">
+            <div className="createSet">
+              <TopNav />
+              <CreateSet />
+            </div>
           </Route>
 
           <Route exact path="/experiment/addword">

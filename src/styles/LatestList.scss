@@ -1,0 +1,35 @@
+@import "./Styles.scss";
+
+.LatestList {
+  padding: 2.5rem 2.5rem;
+
+  .LatestList-top {
+    color: $color-dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .LatestList-heading {
+      font-weight: $text-weight-header;
+      font-size: $text-heading;
+    }
+
+    .LatestList-tool {
+      color: $color-highlight;
+      display: flex;
+      flex-direction: row;
+      &:hover {
+        color: $color-orange;
+      }
+
+      .LatestList-highlight {
+        font-weight: $text-weight-button;
+        font-size: $text-small;
+      }
+    }
+  }
+
+  .LatestList-listview {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+}

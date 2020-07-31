@@ -18,7 +18,6 @@ import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "../styles/google-auth.css";
 import OpenLangApi from "../apis/openlang";
-import openlang from "../apis/openlang";
 
 class GoogleAuth extends React.Component {
   //   componentDidMount() {
@@ -36,18 +35,19 @@ class GoogleAuth extends React.Component {
 
   // 이미 로그인이 되어있을 때도 호출됨.
   signInSuccess = (userInfo) => {
+
     //console.log(userInfo);
     const payload = {};
     payload.accessToken = userInfo.accessToken;
-    payload.userName = userInfo.Rt.AW;
-    payload.userEmail = userInfo.Rt.Bu;
+    payload.userName = userInfo.profileObj.name;
+    payload.userEmail = userInfo.profileObj.email;
     payload.userImage = userInfo.profileObj.imageUrl;
     this.props.googleSigned(payload);
 
     const userData = {};
     userData.countrycode = "KOR";
-    userData.username = userInfo.Rt.AW;
-    userData.email = userInfo.Rt.Bu;
+    userData.username = userInfo.profileObj.name;
+    userData.email = userInfo.profileObj.email;
 
     OpenLangApi.post("/user/create", {
       userData,

@@ -16,9 +16,9 @@ class Word extends React.Component {
 
     const langType = "en";
 
-    OpenLangApi.get(`/searchword?lang=${langType}&word=${word}`).then(
+    OpenLangApi.get(`/word/${word}?lang=${langType}`).then(
       (res, err) => {
-        if (res.data.word_en) {
+        if (res.data.result.word_en) {
           console.log(res.data);
           this.props.wordSessionStart(res.data);
         }

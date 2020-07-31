@@ -501,10 +501,16 @@ CREATE TABLE user` (
 	`password`	varchar(255)    NULL,
 	`registermethod`	VARCHAR(10)	NOT NULL,
 	`email_address`	varchar(255)	NOT NULL,
-	`last_learned`	bigint(10)	NULL
+	`last_learned`	bigint(10)	NULL,
+    `refresh_token` TEXT NULL
 );
 ```
 > 사용자는 기본적으로 ``SNS계정``으로 가입할 수 있으나 선택적으로 이메일과 패스워드로 로그인할 수 있다. <i>GoogleAuth</i>
+
+기존 데이터베이스에 새로운 컬럼 추가하기
+```sql
+alter table user add refresh_token TEXT NOT NULL;
+```
 
 ***
 
