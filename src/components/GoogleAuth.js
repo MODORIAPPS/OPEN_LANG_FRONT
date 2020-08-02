@@ -156,6 +156,7 @@ class GoogleAuth extends React.Component {
           buttonText="Login"
           onSuccess={this.signInSuccess}
           onFailure={this.authFailed}
+          redirectUri="http://localhost:8006/auth/redirect"
           isSignedIn={true}
           cookiePolicy={"single_host_origin"}
           render={(renderProps) => (

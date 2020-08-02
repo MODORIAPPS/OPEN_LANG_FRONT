@@ -12,7 +12,6 @@ import Settings from "./Settings";
 import Panel from "./Panel";
 import LandingPage from "./LandingPage";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import LearningSets from "./learning-sets/LearningSets";
 import CreateSet from "./CreateSet";
 
