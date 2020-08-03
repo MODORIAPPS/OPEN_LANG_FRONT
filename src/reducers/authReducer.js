@@ -1,7 +1,7 @@
 import { GOOGLE_SIGNINED, GOOGLE_SINGOUT } from "../actions/types";
 
 const initialState = {
-  isSigned: null,
+  isSigned: false,
 };
 
 // return which new state by ... syntax
@@ -10,7 +10,6 @@ export default (state = initialState, action) => {
     case GOOGLE_SIGNINED:
       return {
         ...state,
-        accessToken: action.payload.accessToken,
         userName: action.payload.userName,
         userEmail: action.payload.userEmail,
         userImage: action.payload.userImage,
@@ -19,7 +18,6 @@ export default (state = initialState, action) => {
     case GOOGLE_SINGOUT:
       return {
         ...state,
-        accessToken: null,
         userName: null,
         userEmail: null,
         userImage: null,

@@ -15,7 +15,39 @@ import { connect } from "react-redux";
 import LearningSets from "./learning-sets/LearningSets";
 import CreateSet from "./CreateSet";
 
+// action for login
+import {googleSigned} from  "../actions"
+import OpenLangApi from "../apis/openlang";
+
 class App extends React.Component {
+
+  componentDidMount(){
+
+    console.log("Ddddd");
+
+    // # SIGNIN CHECK #
+
+    // make axios request for google profile with credentials
+    // if error occurs while requesting user profile from server, then it is not signined..
+    OpenLangApi.get("/auth/profile").then(({data}) => {
+      console.log(data.name);
+
+      const payload = {};
+      payload.userName = data.name
+      payload.userEmail = data.email
+      payload.userImage = data.picture
+
+      this.props.googleSigned(payload);
+
+    }).catch((error) => {
+      // 로그인 되지 않아서 아무런 세션이 없는 경우 401 Unauthorized 메세지와 도착
+      console.log("로그인 X")
+      console.log(error.status);
+      // alert("노인증!")
+    })
+  }
+
+
   // RouteIf = ({ role, component: Component, ...rest }) => {
   //   return (
   //     <Route
@@ -111,4 +143,4 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return { auth: state.auth };
 };
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps,{googleSigned})(App);

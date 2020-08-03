@@ -21,26 +21,14 @@ class TopNav extends React.Component {
     });
   };
 
-  componentDidMount(){
-    axios.get("http://localhost:8006/auth/profile", {
-      withCredentials: true
-    }).then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
-    })
-  }
-
   renderViews() {
     if (this.state.searchMode) {
       return (
-        <a href="http://localhost:8006/auth/signin">
- <div className="TopNav-searchbar">
-          <SearchIcon className="searchbar-icon" />
-          <input className="searchbar-input" type="text" />
-          <CloseIcon onClick={this.toggle} className="searchbar-close" />
-        </div>
-        </a>
+        <div className="TopNav-searchbar">
+        <SearchIcon className="searchbar-icon" />
+        <input className="searchbar-input" type="text" />
+        <CloseIcon onClick={this.toggle} className="searchbar-close" />
+      </div>
        
       );
     } else {

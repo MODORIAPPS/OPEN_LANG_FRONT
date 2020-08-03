@@ -10,7 +10,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 import SettingsIcon from "@material-ui/icons/Settings";
-import { GoogleLogout } from "react-google-login";
 import React from "react";
 import { connect } from "react-redux";
 import { googleSigned, googleSignOut } from "../actions";
@@ -33,37 +32,51 @@ class GoogleAuth extends React.Component {
     anchorEl: null,
   };
 
-  // 이미 로그인이 되어있을 때도 호출됨.
-  signInSuccess = (userInfo) => {
+  // // 이미 로그인이 되어있을 때도 호출됨.
+  // signInSuccess = (userInfo) => {
 
-    //console.log(userInfo);
-    const payload = {};
-    payload.accessToken = userInfo.accessToken;
-    payload.userName = userInfo.profileObj.name;
-    payload.userEmail = userInfo.profileObj.email;
-    payload.userImage = userInfo.profileObj.imageUrl;
-    this.props.googleSigned(payload);
+  //   //console.log(userInfo);
+  //   const payload = {};
+  //   payload.userName = userInfo.profileObj.name;
+  //   payload.userEmail = userInfo.profileObj.email;
+  //   payload.userImage = userInfo.profileObj.imageUrl;
+  //   this.props.googleSigned(payload);
 
-    const userData = {};
-    userData.countrycode = "KOR";
-    userData.username = userInfo.profileObj.name;
-    userData.email = userInfo.profileObj.email;
+  //   const userData = {};
+  //   userData.countrycode = "KOR";
+  //   userData.username = userInfo.profileObj.name;
+  //   userData.email = userInfo.profileObj.email;
 
-    OpenLangApi.post("/user/create", {
-      userData,
-    }).then((result) => {
+  //   OpenLangApi.post("/user/create", {
+  //     userData,
+  //   }).then((result) => {
+  //     console.log(result);
+  //   });
+  // };
+
+  // Google SignOut
+  signOut = () => {
+    OpenLangApi.get('/auth/signOut').then((result) => {
       console.log(result);
+      this.props.googleSignOut();
+      useHistory().push("/");
+    }).catch((error) => {
+      console.log(error);
     });
   };
 
-  signOutSuccess = () => {
-    this.props.googleSignOut();
-    useHistory().push("/");
-  };
+  // Google SignIn
+  signIn = () => {
+    console.log('react');
 
-  authFailed = (e) => {
-    console.log(e);
-  };
+    const currentLocation = window.location.pathname;
+    console.log(currentLocation);
+    window.location.href = `http://localhost:8006/auth/signin?loc=${currentLocation}`
+  }
+
+  // authFailed = (e) => {
+  //   console.log(e);
+  // };
 
   onClicked = (event) => {
     const control = this.state.model ? false : true;
@@ -110,28 +123,12 @@ class GoogleAuth extends React.Component {
             <List>
               <ListItem
                 button
-                onClick={() => {
-                  console.log("Ddd");
-                  this.props.googleSignOut();
-                }}
+                onClick={() => this.signOut()}
               >
-                <GoogleLogout
-                  clientId={process.env.REACT_APP_CLIENT_ID}
-                  buttonText="Logout"
-                  onLogoutSuccess={this.signOutSuccess}
-                  render={(renderProps) => (
-                    <div
-                      onClick={renderProps.onClick}
-                      disabled={renderProps.disabled}
-                      className="logout-btn"
-                    >
-                      <ListItemIcon>
+                <ListItemIcon>
                         <MeetingRoomIcon />
                       </ListItemIcon>
                       <ListItemText primary="로그아웃" />
-                    </div>
-                  )}
-                ></GoogleLogout>
               </ListItem>
               <ListItem button>
                 <ListItemIcon>
@@ -151,25 +148,12 @@ class GoogleAuth extends React.Component {
       );
     } else if (!this.props.auth.isSigned) {
       return (
-        <GoogleLogin
-          clientId={process.env.REACT_APP_CLIENT_ID}
-          buttonText="Login"
-          onSuccess={this.signInSuccess}
-          onFailure={this.authFailed}
-          redirectUri="http://localhost:8006/auth/redirect"
-          isSignedIn={true}
-          cookiePolicy={"single_host_origin"}
-          render={(renderProps) => (
-            <Button
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
+        <Button
+              onClick={() => this.signIn()}
               variant="contained"
-              color="secondary"
             >
               로그인
             </Button>
-          )}
-        />
       );
     }
   }
