@@ -1,0 +1,19 @@
+@import './Styles.scss';
+
+.ThemeButton{
+    background-color: $color-highlight;
+    border-radius: 0.2rem;
+    padding: 4px 4px;
+    transition: .3s;
+
+    &:hover{
+        transition: .3s;
+        background-color: $color-highlight-hover;
+    }
+
+    .ThemeButton-text{
+        font-weight: $text-weight-button;
+        font-size: $text-header;
+        color: white;
+    }
+}

@@ -18,18 +18,17 @@ import CreateSet from "./CreateSet";
 // action for login
 import {googleSigned} from  "../actions"
 import OpenLangApi from "../apis/openlang";
+import history from '../history';
 
 class App extends React.Component {
 
   componentDidMount(){
-
-    console.log("Ddddd");
-
+    console.log(window.navigator.language);
     // # SIGNIN CHECK #
 
     // make axios request for google profile with credentials
     // if error occurs while requesting user profile from server, then it is not signined..
-    OpenLangApi.get("/auth/profile").then(({data}) => {
+    OpenLangApi.get("/auth/google/profile").then(({data}) => {
       console.log(data.name);
 
       const payload = {};
@@ -38,15 +37,16 @@ class App extends React.Component {
       payload.userImage = data.picture
 
       this.props.googleSigned(payload);
+      // window.location.href = `http://localhost:3000/latest`
 
     }).catch((error) => {
       // 로그인 되지 않아서 아무런 세션이 없는 경우 401 Unauthorized 메세지와 도착
       console.log("로그인 X")
-      console.log(error.status);
+      // window.location.href = `http://localhost:3000/landing`
+      // console.log(error.status);
       // alert("노인증!")
     })
   }
-
 
   // RouteIf = ({ role, component: Component, ...rest }) => {
   //   return (

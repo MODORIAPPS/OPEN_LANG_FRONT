@@ -362,11 +362,74 @@ VALUES (1518484512,"그림자도 없다.");
 
 ***
 
-## [3] 새로운 단어장을 추가할 때 
+## [3] 새로운 학습 세트를 추가할 때 
+
+학습세트의 기본적인 정보를 입력받은 뒤 학습세트에 들어갈 내용을 추가한다. 
+
+학습할 언어가 2종인 경우
+
+
+```json
+{
+    "_id" : "1111",
+    "wordbook_name" : "이우신의 시크릿 영어 세트",
+    "opened" : "true",
+    "lang_info" : [ "ko-KR", "ja-JP" ]
+    "description" : "모의고사의 영단어들을 모아보았어요"
+    "creator_id" : "1",
+    "creator_email" : "kwonkiseok7@gmail.com"
+    "created_at" : "2020-04-05 43:12",
+    "updated_at" : "2021-11-23 42:11",
+    "items" : [
+   		{
+    		"_id" : "1111", 
+    		"question" : "年をとっても働く",
+    		"answer" : "나이가 있어도 일한다.",
+    		"alt" : "JLPT N3 기출 문제집 32쪽",
+    		"description" : "년을 토시라고 읽기도 한다! 꼭 기억할 것."
+    		"created_at" : "2020-04-05 43:12",
+    		"updated_at" : "2021-11-23 42:11",
+    		"highlight" : [
+    			{
+    				"_id" : "1111", 
+    				"target" : "1:3",
+    				"alt" : "とし"
+				},
+				{
+    				"_id" : "1111", 
+    				"target" : "8:10",
+                     "alt" : "はたら"	
+				}
+    		]
+		},
+		{
+    		"_id" : "222", 
+    		"question" : "薬が働く",
+    		"answer" : "약이 효능을 발휘한다.",
+    		"alt" : "JLPT N3 기출 문제집 35쪽",
+    		"description" : "쿠수리 자꾸 까먹는다..",
+            "created_at" : "2020-04-05 43:12",
+    		"updated_at" : "2021-11-23 42:11",
+    		"highlight" : [
+    			{
+    				"_id" : "1111",
+    				"target" : "1:3",
+    				"alt" : "くすり"
+				},
+				{
+    				"_id" : "1111", 
+    				"target" : "8:10",
+                     "alt" : "はたら"	
+				}
+    		]
+		}
+    ]
+}
+```
 
 
 
-//word book
+#### MYSQL DRAFT - DEPRECATED
 
 ```sql
 CREATE TABLE `wordbooks`
@@ -507,7 +570,10 @@ CREATE TABLE user` (
 ```
 > 사용자는 기본적으로 ``SNS계정``으로 가입할 수 있으나 선택적으로 이메일과 패스워드로 로그인할 수 있다. <i>GoogleAuth</i>
 
+
+
 기존 데이터베이스에 새로운 컬럼 추가하기
+
 ```sql
 alter table user add refresh_token TEXT NOT NULL;
 ```

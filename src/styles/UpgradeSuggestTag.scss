@@ -1,0 +1,14 @@
+@import './Styles.scss';
+
+.UpgradeSuggestTag{
+    background-color: $color-highlight;
+
+    &:hover{
+        background-color: $color-highlight-hover;
+    }
+
+    p{
+        font-size: $text-small;
+        color: white;
+    }
+}

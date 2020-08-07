@@ -1,13 +1,14 @@
 import React from "react";
 import "../styles/TopNav.scss";
-import GoogleAuth from "./GoogleAuth";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 import SearchIcon from "@material-ui/icons/Search";
 import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
+import UpgradeSuggestTag from './views/upgradeSuggestTag';
 import axios from "axios";
+import Auth from './topnav/Auth';
+
 class TopNav extends React.Component {
 
   state = {
@@ -48,7 +49,7 @@ class TopNav extends React.Component {
             </div>
           </Link>
 
-          <GoogleAuth className="TopNav-auth-btn" />
+          <Auth />
         </div>
       );
     }

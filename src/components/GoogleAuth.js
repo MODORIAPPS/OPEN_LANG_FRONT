@@ -56,7 +56,7 @@ class GoogleAuth extends React.Component {
 
   // Google SignOut
   signOut = () => {
-    OpenLangApi.get('/auth/signOut').then((result) => {
+    OpenLangApi.get('/auth/google/signout').then((result) => {
       console.log(result);
       this.props.googleSignOut();
       useHistory().push("/");
@@ -71,7 +71,7 @@ class GoogleAuth extends React.Component {
 
     const currentLocation = window.location.pathname;
     console.log(currentLocation);
-    window.location.href = `http://localhost:8006/auth/signin?loc=${currentLocation}`
+    window.location.href = `http://localhost:8006/auth/google/signin?loc=${currentLocation}`
   }
 
   // authFailed = (e) => {

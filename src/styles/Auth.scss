@@ -1,0 +1,18 @@
+@import './Styles.scss';
+
+.Auth{
+    
+    // login button
+    .Auth-signin{
+        
+    }
+
+    // user Avatar
+    .Auth-userAvatar{
+        &:hover{
+            // TODO: 파랑색 오버레이 
+            background-color: blue;
+        }
+    }
+
+}
