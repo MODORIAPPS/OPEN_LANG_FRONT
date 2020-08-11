@@ -1,0 +1,59 @@
+@import './Styles.scss';
+
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+// LAYOUT
+.container {
+    
+}
+
+.container.white {
+    background-color: $color-white;
+}
+
+.container.brightblue {
+    background-color: $color-brightblue;
+}
+
+
+// TEXT STYLE
+.text {
+    margin: 0;
+    padding: 0;
+    color: $color-dark;   
+}
+
+.text.title {
+    font-weight: $text-weight-header;
+}
+
+.text.small {
+    font-weight: bold;
+    font-size: $text-small;
+}
+
+.text.info {
+    // TODO: font size
+    color: $color-grey;
+    font-weight: bold;
+}
+
+.text.highlight {
+    transition: .2s;
+    color: $color-highlight;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-orange;
+        transition: .2s;
+    }
+}

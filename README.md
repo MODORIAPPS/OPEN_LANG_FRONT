@@ -374,6 +374,7 @@ VALUES (1518484512,"그림자도 없다.");
     "_id" : "1111",
     "wordbook_name" : "이우신의 시크릿 영어 세트",
     "opened" : "true",
+    "making" : "true", // 미완성 구분`
     "lang_info" : [ "ko-KR", "ja-JP" ]
     "description" : "모의고사의 영단어들을 모아보았어요"
     "creator_id" : "1",

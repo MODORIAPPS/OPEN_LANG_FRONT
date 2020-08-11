@@ -20,6 +20,9 @@ import {googleSigned} from  "../actions"
 import OpenLangApi from "../apis/openlang";
 import history from '../history';
 
+import '../styles/OpenLangTheme.scss';
+
+
 class App extends React.Component {
 
   componentDidMount(){
@@ -96,7 +99,7 @@ class App extends React.Component {
           </Route>
 
           <Route path="/">
-            <div className="home">
+            <div className="home container brightblue">
               <div className="top-nav">
                 <TopNav />
               </div>

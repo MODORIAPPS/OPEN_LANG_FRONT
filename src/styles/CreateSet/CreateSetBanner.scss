@@ -1,0 +1,25 @@
+.CreateSetBanner{
+
+    position: relative;
+
+    .CreateSetBanner-background-item {
+        z-index: 1;
+    }
+
+    .CreateSetBanner-banner{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 50;
+        .CreateSetBanner-bannerImage{
+            background-image: url(https://assets.quizlet.com/a/i/create_set/diagram.e42467e56b77059.svg);
+            height: 4.875rem;
+            width: 5.5625rem;
+            transform: rotate(-20deg);
+        }
+
+        .CreateSetBanner-text{
+          
+        }
+    }
+}

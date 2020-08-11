@@ -1,24 +1,20 @@
 .top-nav {
   margin: 0;
   padding: 0;
-
   align-items: center;
   display: flex;
-  width: 100%;
+  width: 100vw;
 }
 
 .home {
   background-color: #f4f4f4;
+  padding: 0;
 }
 
 .body {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
   max-width: 81.25em;
-
-  /* padding-left: 270px;
-  padding-right: 270px; */
 }
 
 .left-nav {

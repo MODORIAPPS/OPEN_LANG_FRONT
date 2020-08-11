@@ -1,0 +1,48 @@
+@import '../Styles.scss';
+
+.CreateSetHeader{
+    .CreateSetHeader-wrapper{
+        
+
+        .CreateSetHeader-top{
+            display: flex;
+            justify-content: space-between;
+
+            .CreateSetHeader-vertical{
+                display: flex;
+                flex-direction: column;
+
+                #changed-notify{
+                    margin: 0;
+                    font-size: $text-heading;
+                    color : grey;
+                }
+            }
+        }
+
+        .inputfield{
+            width: 100%;
+            display: block;
+        }
+
+        .CreateSetHeader-bottom{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .CreateSetHeader-right{
+
+                .CreateSetHeader-item{
+                    p{
+                        margin: 0;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    
+}
